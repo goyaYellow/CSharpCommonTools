@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using MuneakiTools;
+using MuneakiTools.CommonExtentions;
 using Xunit;
 
-namespace Tools_Test.Support
+namespace Tools_Test.CommonExtentions
 {
-    /// <summary> <see cref="CommonExtentions"/>に対するテストです </summary>
+    /// <summary> <see cref="MuneakiTools.CommonExtentions"/>に対するテストです </summary>
     public class CommonExtentions_Test
     {
         /// <summary> <see cref="CommonExtentions.AssertNotExistNull(object?)"/>に対するテストです </summary>

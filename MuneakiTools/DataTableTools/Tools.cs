@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 #pragma warning disable SA1649 // File name should match first type name
 
-namespace MuneakiTools.Support.DataTableTools
+namespace MuneakiTools.DataTableTools
 {
     /// <summary> Datseを扱うためのツール集 </summary>
     public static class DatatableTools

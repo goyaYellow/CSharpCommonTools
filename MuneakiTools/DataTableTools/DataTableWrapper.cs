@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MuneakiTools.Support.DataTableTools
+namespace MuneakiTools.DataTableTools
 {
     /// <summary> Datasetを使いやすくするためのラッパー </summary>
     public class DatatableWrapper : IEnumerable<DataRowWrapper>
@@ -44,7 +44,7 @@ namespace MuneakiTools.Support.DataTableTools
 
         /// <summary> 指定列の値をStringとして取得する </summary>
         /// <param name="header">取得したい列のヘッダ</param>
-        /// <exception cref="InvalidDataException">該当ヘッダが存在しない場合などにスローします</exception>
+        /// <exception cref="KeyNotFoundException">該当ヘッダが存在しない場合にスローします</exception>
         /// <returns>指定列の値</returns>
         public string FindAsStr(string header)
         {
@@ -54,13 +54,14 @@ namespace MuneakiTools.Support.DataTableTools
             }
             catch
             {
-                throw new InvalidDataException($"指定されたヘッダ{header}に該当するデータが存在しませんでした");
+                throw new KeyNotFoundException($"指定されたヘッダ{header}に該当するデータが存在しませんでした");
             }
         }
 
         /// <summary> 指定列の値をStringとして取得する </summary>
-        /// <param name="header">取得したい列のヘッダ</param>
-        /// <exception cref="InvalidDataException">該当ヘッダが存在しない、データがキャストできない場合などにスローします</exception>
+        /// <param name="header">取得したい列のヘッダ</param
+        /// <exception cref="KeyNotFoundException">該当ヘッダが存在しない場合にスローします</exception>
+        /// <exception cref="InvalidDataException">データがキャストできない場合にスローします</exception>
         /// <returns>指定列の値</returns>
         public int FindAsInt(string header)
         {

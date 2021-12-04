@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MuneakiTools.Support.DataTableTools;
+using MuneakiTools.DataTableTools;
 using Xunit;
 
 #pragma warning disable SA1649 // File name should match first type name
@@ -69,7 +66,7 @@ namespace Tools_Test.Support.DataTableTools
 
                 // 実行と検証
                 var row = wrapper.First();
-                Assert.Throws<InvalidDataException>(() => row.FindAsStr("column3"));
+                Assert.Throws<KeyNotFoundException>(() => row.FindAsStr("column3"));
             }
         }
 
@@ -99,7 +96,7 @@ namespace Tools_Test.Support.DataTableTools
 
                 // 検証
                 var row = wrapper.First();
-                Assert.Throws<InvalidDataException>(() => row.FindAsInt("column3"));
+                Assert.Throws<KeyNotFoundException>(() => row.FindAsInt("column3"));
             }
 
             [Fact]

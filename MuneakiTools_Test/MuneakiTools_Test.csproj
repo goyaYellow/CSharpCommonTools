@@ -32,9 +32,11 @@
   <ItemGroup>
     <None Remove="DataTableTools\" />
     <None Remove="Logger\" />
+    <None Remove="CommonExtentions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTableTools\" />
     <Folder Include="Logger\" />
+    <Folder Include="CommonExtentions\" />
   </ItemGroup>
 </Project>

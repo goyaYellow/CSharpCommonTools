@@ -23,8 +23,10 @@
 
   <ItemGroup>
     <None Remove="DataTableTools\" />
+    <None Remove="CommonExtentions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataTableTools\" />
+    <Folder Include="CommonExtentions\" />
   </ItemGroup>
 </Project>
