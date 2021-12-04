@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
-using Tools.OriginalException;
+using MuneakiTools.OriginalException;
 
-namespace Tools.Logger
+namespace MuneakiTools.Logger
 {
     /// <summary> 汎用ロガー </summary>
     /// <inheritdoc/>

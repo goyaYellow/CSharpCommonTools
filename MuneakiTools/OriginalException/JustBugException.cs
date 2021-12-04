@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tools.OriginalException
+namespace MuneakiTools.OriginalException
 {
     /// <summary> バグでしかないんじゃない？というタイミングでスローされる例外です </summary>
     public class JustBugException : Exception

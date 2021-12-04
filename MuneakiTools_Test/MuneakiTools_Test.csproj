@@ -29,4 +29,12 @@
   <ItemGroup>
     <ProjectReference Include="..\MuneakiTools\MuneakiTools.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="DataTableTools\" />
+    <None Remove="Logger\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataTableTools\" />
+    <Folder Include="Logger\" />
+  </ItemGroup>
 </Project>

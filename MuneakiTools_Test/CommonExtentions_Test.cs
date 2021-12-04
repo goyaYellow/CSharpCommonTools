@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Tools.Support;
-using Tools.ValueObject.SizeObj;
+using MuneakiTools;
 using Xunit;
 
 namespace Tools_Test.Support
@@ -323,10 +322,14 @@ namespace Tools_Test.Support
 
         public class オブジェクトをDeepCopyeできる
         {
+            private record SampleValue(int Value);
+
+            private record SampleRecord(SampleValue Value1, SampleValue Value2, SampleValue Value3);
+
             [Fact]
             public void インスタンスから呼び出すと同値で別参照のインスタンスを返す()
             {
-                var source = new Size(new(1), new(2), new(3));
+                var source = new SampleRecord(new(1), new(2), new(3));
 
                 var actual = source.DeepCopy();
 
@@ -334,12 +337,12 @@ namespace Tools_Test.Support
                 Assert.Equal(source, actual);
 
                 // DeepCopyなのでメンバも参照が異なるはず
-                Assert.False(object.ReferenceEquals(source.Length, actual.Length));
-                Assert.Equal(source.Length, actual.Length);
-                Assert.False(object.ReferenceEquals(source.Width, actual.Width));
-                Assert.Equal(source.Width, actual.Width);
-                Assert.False(object.ReferenceEquals(source.Height, actual.Height));
-                Assert.Equal(source.Height, actual.Height);
+                Assert.False(object.ReferenceEquals(source.Value1, actual.Value1));
+                Assert.Equal(source.Value1, actual.Value1);
+                Assert.False(object.ReferenceEquals(source.Value2, actual.Value2));
+                Assert.Equal(source.Value2, actual.Value2);
+                Assert.False(object.ReferenceEquals(source.Value3, actual.Value3));
+                Assert.Equal(source.Value3, actual.Value3);
             }
 
             [Fact]

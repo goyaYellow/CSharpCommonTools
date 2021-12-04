@@ -21,4 +21,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="DataTableTools\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataTableTools\" />
+  </ItemGroup>
 </Project>

@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
-using System.Threading.Tasks;
-using Tools.OriginalException;
 
-namespace Tools.Support
+namespace MuneakiTools
 {
     /// <summary> 汎用拡張メソッド </summary>
     public static class CommonExtentions
@@ -20,7 +16,7 @@ namespace Tools.Support
         /// <para> インスタンスのメンバにNullが含まれるかを確認します </para>
         /// <para> 非Static＆Publicなフィールド＆プロパティについてチェックします </para>
         /// <para> 再起呼び出しにより,インスタンスの最下層までチェックします </para>
-        /// </summary>
+        /// </summary>ß
         /// <param name="obj">チェックしたいオブジェクト</param>
         /// <exception cref="NullReferenceException">Nullが存在した場合にスローします</exception>
         public static void AssertNotExistNull(this object? obj)

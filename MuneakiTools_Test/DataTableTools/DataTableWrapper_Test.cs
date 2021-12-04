@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools.Support.DataTableTools;
+using MuneakiTools.Support.DataTableTools;
 using Xunit;
 
 #pragma warning disable SA1649 // File name should match first type name

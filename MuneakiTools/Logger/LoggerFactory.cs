@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools.OriginalException;
+using MuneakiTools.OriginalException;
 
-namespace Tools.Logger
+namespace MuneakiTools.Logger
 {
     /// <summary> ロガーインスタンを生成して返します </summary>
     /// <remarks> 本番用＆テスト用ロガーを切り替えて提供します </remarks>

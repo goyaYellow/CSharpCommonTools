@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Support.DataTableTools
+namespace MuneakiTools.Support.DataTableTools
 {
     /// <summary> Datasetを使いやすくするためのラッパー </summary>
     public class DatatableWrapper : IEnumerable<DataRowWrapper>

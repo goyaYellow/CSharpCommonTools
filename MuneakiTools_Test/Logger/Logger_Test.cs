@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tools.Logger;
-using Tools.OriginalException;
+using MuneakiTools.Logger;
+using MuneakiTools.OriginalException;
 using Xunit;
 
 namespace Tools_Test.Logger
@@ -14,14 +14,14 @@ namespace Tools_Test.Logger
         private const string DefoltMassage = "test";
         private const Level DefoltLevel = Level.Debug;
 
-        private readonly Tools.Logger.Logger logger = new Tools.Logger.Logger();
+        private readonly MuneakiTools.Logger.Logger logger = new MuneakiTools.Logger.Logger();
 
         [Fact]
         public void インスタンス化できる()
         {
-            var logger = new Tools.Logger.Logger();
+            var logger = new MuneakiTools.Logger.Logger();
 
-            Assert.IsType<Tools.Logger.Logger>(logger);
+            Assert.IsType<MuneakiTools.Logger.Logger>(logger);
         }
 
         [Fact]

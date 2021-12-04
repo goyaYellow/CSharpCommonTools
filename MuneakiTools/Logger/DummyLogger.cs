@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tools.Logger
+namespace MuneakiTools.Logger
 {
     /// <summary> ダミーロガー </summary>
     /// <inheritdoc/>
