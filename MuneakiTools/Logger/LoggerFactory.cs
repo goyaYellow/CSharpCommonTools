@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MuneakiTools.OriginalException;
 
 namespace MuneakiTools.Logger
 {
@@ -31,11 +25,11 @@ namespace MuneakiTools.Logger
 
         /// <summary>　本番用ロガーを使用するようにする </summary>
         /// <remarks> 使用する場合は必ずインスタンス生成前に使用するようにしてください。守らなければ例外をスローします。 </remarks>
-        /// <exception cref="Exception">既にインスタンス生成済みなのに本関数が叩かれた場合にスロー</exception>
+        /// <exception cref="InvalidOperationException">既にインスタンス生成済みなのに本関数が叩かれた場合にスロー</exception>
         public static void SetProductionMode()
         {
             if (logger is not null)
-                throw new Exception($"{nameof(logger)}が生成済みなのにモードを切り替えられそうになりました。{nameof(isDummy)}:{isDummy.ToString()}");
+                throw new InvalidOperationException($"{nameof(logger)}が生成済みなのにモードを切り替えられそうになりました。{nameof(isDummy)}:{isDummy.ToString()}");
 
             isDummy = false;
         }

@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
 
-namespace MuneakiTools
+namespace MuneakiTools.CommonExtentions
 {
     /// <summary> 汎用拡張メソッド </summary>
     public static class CommonExtentions
