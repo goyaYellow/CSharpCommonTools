@@ -25,10 +25,6 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\MuneakiTools\MuneakiTools.csproj" />
-  </ItemGroup>
   <ItemGroup>
     <None Remove="DataTableTools\" />
     <None Remove="Logger\" />
@@ -38,5 +34,8 @@
     <Folder Include="DataTableTools\" />
     <Folder Include="Logger\" />
     <Folder Include="CommonExtentions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MuneakiTools\MuneakiTools.csproj" />
   </ItemGroup>
 </Project>
