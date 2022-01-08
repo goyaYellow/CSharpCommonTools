@@ -3,6 +3,23 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/goyaYellow/cs-tools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/goyaYellow/cs-tools.git</RepositoryUrl>
+    <Version>1.0.2</Version>
+    <Description>個人的なツール群。標準型の拡張メソッドが主。</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReleaseNotes>xmlコメントの有効化(再)</PackageReleaseNotes>
+    <Authors>GoyaYellow</Authors>
+    <Company />
+    <Product />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\j0114550\Desktop\リポジトリ\cs-tools\MuneakiTools\MuneakiTools.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\j0114550\Desktop\リポジトリ\cs-tools\MuneakiTools\MuneakiTools.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

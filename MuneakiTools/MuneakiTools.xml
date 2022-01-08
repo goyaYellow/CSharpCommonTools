@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MuneakiTools</name>
+    </assembly>
+    <members>
+        <member name="T:MuneakiTools.CommonExtentions.CommonExtentions">
+            <summary> 汎用拡張メソッド </summary>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.AssertNotExistNull(System.Object)">
+            <summary>
+            <para> インスタンスのメンバにNullが含まれるかを確認します </para>
+            <para> 非Static＆Publicなフィールド＆プロパティについてチェックします </para>
+            <para> 再起呼び出しにより,インスタンスの最下層までチェックします </para>
+            </summary>ß
+            <param name="obj">チェックしたいオブジェクト</param>
+            <exception cref="T:System.NullReferenceException">Nullが存在した場合にスローします</exception>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsPositive(System.Int32)">
+            <summary> 正の値ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：正の値、False：それ以外(0も含む) </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsNegative(System.Int32)">
+            <summary> 負の値ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：負の値、False：それ以外(0も含む)  </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsOdd(System.Int32)">
+            <summary> 奇数ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：奇数、False：それ以外(0も含む)  </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsEven(System.Int32)">
+            <summary> 偶数ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：偶数、False：それ以外(0も含む)  </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsPositive(System.Double)">
+            <summary> 正の値ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：正の値、False：それ以外(0も含む)  </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsNegative(System.Double)">
+            <summary> 負の値ならTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：負の値、False：それ以外(0も含む)  </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.HasDecimal(System.Double)">
+            <summary> 小数の値が存在すればTrueを返す </summary>
+            <param name="source"> チェックしたい値 </param>
+            <returns> True：小数の値が存在する、False：存在しない </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.ConvertDecimalToInteger(System.Double,System.Int32)">
+            <summary>　小数値を整数に繰上変換します　</summary>
+            <remarks>
+            <para> ①ソースの整数部は無視されます </para>
+            <para> ②対象範囲より下の位の値は完全切り捨てされます </para>
+            </remarks>
+            <param name="source"> 小数部を変換したい値 </param>
+            <param name="digitsNumber"> 繰り上げ桁数。デフォルト値は３桁で、これは 0.500sec->500msec変換 等に対応している </param>
+            <returns> 繰り上げ返還後の値 </returns>
+            <exception cref="T:System.ArgumentException">繰り上げ桁数指定が不正時にスロー</exception>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsNullOrEmpty(System.String)">
+            <summary>　<see cref="M:System.String.IsNullOrEmpty(System.String)"/>のインスタンス関数風版　</summary>
+            <param name="source"> チェックしたい文字列 </param>
+            <returns>　Nullか空文字ならTrue、それ以外はFalse </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.IsNullOrWhiteSpace(System.String)">
+            <summary>　<see cref="M:System.String.IsNullOrWhiteSpace(System.String)"/>のインスタンス関数風版　</summary>
+            <param name="source"> チェックしたい文字列 </param>
+            <returns>　Null・空文字・スペースだけのいづれかならTrue、それ以外はFalse </returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.ReplaceInRange(System.String,System.Char,System.Char,System.Char)">
+            <summary>　セパレータで指定された範囲内において、文字を置換します　</summary>
+            <param name="source">元ネタとなる文字列</param>
+            <param name="sepalater">セパレータ</param>
+            <param name="oldChr">置換対象の文字</param>
+            <param name="newChr">置換したい文字</param>
+            <returns>置換後の文字列</returns>
+        </member>
+        <member name="M:MuneakiTools.CommonExtentions.CommonExtentions.DeepCopy``1(``0)">
+            <summary> ディープコピーをします </summary>
+            <remarks>
+            <para> ① 処理速度めっちゃ遅い </para>
+            <para> ② JSON変換がうまくいかないオブジェクトでは失敗します </para>
+            </remarks>
+            <typeparam name="T"> 型 </typeparam>
+            <param name="soruce"> コピーしたい元ネタ </param>
+            <returns> ディープコピーしたオブジェクト </returns>
+        </member>
+        <member name="T:MuneakiTools.DataTableTools.DatatableWrapper">
+            <summary> Datasetを使いやすくするためのラッパー </summary>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DatatableWrapper.#ctor(System.Data.DataTable)">
+            <summary> Initializes a new instance of the <see cref="T:MuneakiTools.DataTableTools.DatatableWrapper"/> class. </summary>
+            <param name="table">データテーブル</param>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DatatableWrapper.GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DatatableWrapper.System#Collections#IEnumerable#GetEnumerator">
+            <inheritdoc/>
+        </member>
+        <member name="T:MuneakiTools.DataTableTools.DataRowWrapper">
+            <summary> Dataflameを使いやすくするためのラッパー </summary>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DataRowWrapper.#ctor(System.Data.DataRow)">
+            <summary> Initializes a new instance of the <see cref="T:MuneakiTools.DataTableTools.DataRowWrapper"/> class. </summary>
+            <param name="row">データ行</param>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DataRowWrapper.FindAsStr(System.String)">
+            <summary> 指定列の値をStringとして取得する </summary>
+            <param name="header">取得したい列のヘッダ</param>
+            <exception cref="T:System.Collections.Generic.KeyNotFoundException">該当ヘッダが存在しない場合にスローします</exception>
+            <returns>指定列の値</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:MuneakiTools.DataTableTools.DataRowWrapper.FindAsInt(System.String)" -->
+        <member name="T:MuneakiTools.DataTableTools.DatatableTools">
+            <summary> Datseを扱うためのツール集 </summary>
+        </member>
+        <member name="M:MuneakiTools.DataTableTools.DatatableTools.LoadCsv(System.String,System.Char,System.Text.Encoding)">
+            <summary> csvを読み込みtable形式にして返す </summary>
+            <param name="path">Fileパス</param>
+            <param name="separator">セパレータ。デフォルトではカンマ。</param>
+            <param name="encoding">エンコーディング。特にセットしなければUTF－８になる</param>
+            <exception cref="T:System.IO.InvalidDataException">ヘッダーの列数とデータの列数が不一致など。読み取り失敗時にスロー。</exception>
+            <returns>csvの中身</returns>
+        </member>
+        <member name="T:MuneakiTools.Logger.DummyLogger">
+            <summary> ダミーロガー </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:MuneakiTools.Logger.DummyLogger.Write(MuneakiTools.Logger.Level,System.String,System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="T:MuneakiTools.Logger.ILogger">
+            <summary> 汎用ロガーInterface </summary>W
+        </member>
+        <member name="M:MuneakiTools.Logger.ILogger.Log(MuneakiTools.Logger.Level,System.String,System.Exception)">
+            <summary> ログを書き込む </summary>
+            <param name="leevel">ログレベル</param>
+            <param name="message">メッセージ</param>
+            <param name="exception">記録したい例外</param>
+            <exception cref="T:System.ArgumentException">不正な文字を含むメッセージを渡された</exception>
+        </member>
+        <member name="T:MuneakiTools.Logger.BaseLogger">
+            <summary> 汎用ロガー基底クラス </summary>
+            <inheritdoc/>
+        </member>
+        <member name="F:MuneakiTools.Logger.BaseLogger.InvalidChar">
+            <summary> 禁止文字 </summary>
+            <remarks> プロジェクト毎に変えていい。ログがカンマ区切りの場合を考慮してとりまカンマ </remarks>
+        </member>
+        <member name="M:MuneakiTools.Logger.BaseLogger.Log(MuneakiTools.Logger.Level,System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="M:MuneakiTools.Logger.BaseLogger.Write(MuneakiTools.Logger.Level,System.String,System.String,System.Exception)">
+            <summary> ログ書き込みの実施 </summary>
+            <param name="leevel">ログレベル</param>
+            <param name="message">メッセージ</param>
+            <param name="methodName">呼び出し元関数名</param>
+            <param name="exception">記録したい例外</param>
+        </member>
+        <member name="T:MuneakiTools.Logger.Level">
+            <summary> ログレベル </summary>
+            <remarks>
+            <para> log4netのログレベルを踏襲しつつ,<see cref="F:MuneakiTools.Logger.Level.Operation"/>を追加 2021/2/1 somei </para>
+            <para> 参照｜https://qiita.com/nanasess/items/350e59b29cceb2f122b3 </para>
+            </remarks>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Debug">
+            <summary> システムの動作状況に関する詳細な情報 </summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Info">
+            <summary> 実行時の何らかの注目すべき事象（開始や終了など） </summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Operation">
+            <summary> ユーザの操作を記録する。ユーザの「なにもしてないのに壊れた(笑)」を防止する </summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Warn">
+            <summary> 廃要素となったAPIの使用、APIの不適切な使用、エラーに近い事象など。実行時に生じた異常とは言い切れないが正常とも異なる何らかの予期しない問題 </summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Error">
+            <summary> 予期しないその他の実行時エラー。例外など。 </summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.Level.Fatal">
+            <summary> プログラムの異常終了を伴うようなもの。 </summary>
+        </member>
+        <member name="T:MuneakiTools.Logger.Logger">
+            <summary> 汎用ロガー </summary>
+            <inheritdoc/>
+        </member>
+        <member name="M:MuneakiTools.Logger.Logger.Write(MuneakiTools.Logger.Level,System.String,System.String,System.Exception)">
+            <inheritdoc/>
+        </member>
+        <member name="T:MuneakiTools.Logger.LoggerFactory">
+            <summary> ロガーインスタンを生成して返します </summary>
+            <remarks> 本番用＆テスト用ロガーを切り替えて提供します </remarks>
+            <remarks> シングルトンデザインパターン </remarks>
+        </member>
+        <member name="F:MuneakiTools.Logger.LoggerFactory.isDummy">
+            <summary>　ダミー？　</summary>
+        </member>
+        <member name="F:MuneakiTools.Logger.LoggerFactory.logger">
+            <summary>　ロガーインスタンス　</summary>
+        </member>
+        <member name="M:MuneakiTools.Logger.LoggerFactory.Get">
+            <summary> シングルトンなロガーインスタンスを返します </summary>
+            <remarks><see cref="M:MuneakiTools.Logger.LoggerFactory.SetProductionMode"/>を叩いていないデフォルト状態だと、ダミー用ロガーを返します</remarks>
+            <returns>ロガーインスタンス</returns>
+        </member>
+        <member name="M:MuneakiTools.Logger.LoggerFactory.SetProductionMode">
+            <summary>　本番用ロガーを使用するようにする </summary>
+            <remarks> 使用する場合は必ずインスタンス生成前に使用するようにしてください。守らなければ例外をスローします。 </remarks>
+            <exception cref="T:System.InvalidOperationException">既にインスタンス生成済みなのに本関数が叩かれた場合にスロー</exception>
+        </member>
+        <member name="M:MuneakiTools.Logger.LoggerFactory.Create">
+            <summary> ロガーインスタンスを生成する </summary>
+            <returns> ロガーインスタンス </returns>
+        </member>
+        <member name="T:MuneakiTools.OriginalException.JustBugException">
+            <summary> バグでしかないんじゃない？というタイミングでスローされる例外です </summary>
+        </member>
+        <member name="P:MuneakiTools.OriginalException.JustBugException.Template">
+            <summary>　テンプレ例外インスタンス　</summary>
+        </member>
+        <member name="M:MuneakiTools.OriginalException.JustBugException.#ctor(System.String,System.Exception)">
+            <summary> Initializes a new instance of the <see cref="T:MuneakiTools.OriginalException.JustBugException"/> class. </summary>
+            <param name="massage"> メッセージ </param>
+            <param name="innerException"> インナーエクセプション </param>
+        </member>
+    </members>
+</doc>
