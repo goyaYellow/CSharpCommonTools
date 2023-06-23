@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 
 namespace MuneakiTools.DataTableTools
 {
-    /// <summary> Datseを扱うためのツール集 </summary>
-    public static class DatatableTools
+    /// <summary> DataTable を扱うためのツール集 </summary>
+    public static class DataTableTools
     {
         /// <summary> csvを読み込みtable形式にして返す </summary>
         /// <param name="path">Fileパス</param>
@@ -20,7 +20,7 @@ namespace MuneakiTools.DataTableTools
         /// <param name="encoding">エンコーディング。特にセットしなければUTF－８になる</param>
         /// <exception cref="InvalidDataException">ヘッダーの列数とデータの列数が不一致など。読み取り失敗時にスロー。</exception>
         /// <returns>csvの中身</returns>
-        public static DatatableWrapper LoadCsv(string path, char separator = ',', Encoding? encoding = null)
+        public static DataTableWrapper LoadCsv(string path, char separator = ',', Encoding? encoding = null)
         {
             var table = new DataTable();
 
@@ -52,7 +52,7 @@ namespace MuneakiTools.DataTableTools
                     table.Rows.Add(values);
                 }
 
-                return new DatatableWrapper(table);
+                return new DataTableWrapper(table);
             }
             catch (Exception e)
             {

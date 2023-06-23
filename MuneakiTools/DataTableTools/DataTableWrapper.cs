@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace MuneakiTools.DataTableTools
 {
     /// <summary> Datasetを使いやすくするためのラッパー </summary>
-    public class DatatableWrapper : IEnumerable<DataRowWrapper>
+    public class DataTableWrapper : IEnumerable<DataRowWrapper>
     {
         private readonly DataTable table;
 
-        /// <summary> Initializes a new instance of the <see cref="DatatableWrapper"/> class. </summary>
+        /// <summary> Initializes a new instance of the <see cref="DataTableWrapper"/> class. </summary>
         /// <param name="table">データテーブル</param>
-        public DatatableWrapper(DataTable table)
+        public DataTableWrapper(DataTable table)
             => this.table = table;
 
         /// <inheritdoc/>
