@@ -10,12 +10,12 @@ using Xunit;
 namespace Tools_Test.Support.DataTableTools
 {
     /// <summary>
-    /// <see cref="DatatableWrapper"/>に対するテストです
+    /// <see cref="DataTableWrapper"/>に対するテストです
     /// </summary>
-    public class DatatableWrapper_Test
+    public class DataTableWrapper_Test
     {
         /// <summary>
-        /// <see cref="DatatableWrapper(DataTable)"/>に対するテストです
+        /// <see cref="DataTableWrapper(DataTable)"/>に対するテストです
         /// </summary>
         public class 正常にインスタンスが生成できる
         {
@@ -24,10 +24,10 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 実行と検証
-                Assert.IsType<DatatableWrapper>(wrapper);
+                Assert.IsType<DataTableWrapper>(wrapper);
                 _ = (wrapper as System.Collections.IEnumerable).GetEnumerator(); // カバレッジ誤魔化し
                 Assert.Equal(2, wrapper.Count());
             }
@@ -49,7 +49,7 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 実行と検証
                 var row = wrapper.First();
@@ -62,7 +62,7 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 実行と検証
                 var row = wrapper.First();
@@ -80,7 +80,7 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 実行と検証
                 var row = wrapper.First();
@@ -92,7 +92,7 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 検証
                 var row = wrapper.First();
@@ -104,7 +104,7 @@ namespace Tools_Test.Support.DataTableTools
             {
                 // 準備
                 var table = DataTableTestDataFactory.Create();
-                var wrapper = new DatatableWrapper(table);
+                var wrapper = new DataTableWrapper(table);
 
                 // 実行と検証
                 var row = wrapper.First();
