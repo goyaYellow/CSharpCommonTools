@@ -7,10 +7,10 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Unicode;
 
-namespace MuneakiTools.CommonExtentions
+namespace MuneakiTools.CommonExtensions
 {
     /// <summary> 汎用拡張メソッド </summary>
-    public static class CommonExtentions
+    public static class CommonExtensions
     {
         /// <summary>
         /// <para> インスタンスのメンバにNullが含まれるかを確認します </para>
@@ -132,20 +132,20 @@ namespace MuneakiTools.CommonExtentions
 
         /// <summary>　セパレータで指定された範囲内において、文字を置換します　</summary>
         /// <param name="source">元ネタとなる文字列</param>
-        /// <param name="sepalater">セパレータ</param>
+        /// <param name="separator">セパレータ</param>
         /// <param name="oldChr">置換対象の文字</param>
         /// <param name="newChr">置換したい文字</param>
         /// <returns>置換後の文字列</returns>
-        public static string ReplaceInRange(this string source, char sepalater, char oldChr, char newChr)
+        public static string ReplaceInRange(this string source, char separator, char oldChr, char newChr)
         {
-            var splited = source.Split(sepalater);
-            foreach (int i in Enumerable.Range(0, splited.Length))
+            var splitted = source.Split(separator);
+            foreach (int i in Enumerable.Range(0, splitted.Length))
             {
                 if (i % 2 == 1)
-                    splited[i] = splited[i].Replace(oldChr, newChr);
+                    splitted[i] = splitted[i].Replace(oldChr, newChr);
             }
 
-            return string.Join(sepalater, splited);
+            return string.Join(separator, splitted);
         }
 
         /// <summary> ディープコピーをします </summary>
@@ -154,9 +154,9 @@ namespace MuneakiTools.CommonExtentions
         /// <para> ② JSON変換がうまくいかないオブジェクトでは失敗します </para>
         /// </remarks>
         /// <typeparam name="T"> 型 </typeparam>
-        /// <param name="soruce"> コピーしたい元ネタ </param>
+        /// <param name="source"> コピーしたい元ネタ </param>
         /// <returns> ディープコピーしたオブジェクト </returns>
-        public static T DeepCopy<T>(this T soruce)
+        public static T DeepCopy<T>(this T source)
         {
             /* jsonへのシリアライズ→デシリアライズを通してディープコピー */
 
@@ -168,7 +168,7 @@ namespace MuneakiTools.CommonExtentions
             };
 
             // シリアライズ
-            var jsonText = JsonSerializer.Serialize<T>(soruce, jsonOptions);
+            var jsonText = JsonSerializer.Serialize<T>(source, jsonOptions);
 
             // デシリアライズ
             T ret = JsonSerializer.Deserialize<T>(jsonText)
